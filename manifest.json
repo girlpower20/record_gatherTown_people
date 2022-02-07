@@ -1,0 +1,14 @@
+{
+    "name": "how many user online now?",
+    "description" : "record the exhibition of gather's online user.",
+    "version": "1.0",
+    "permissions": [],
+    "manifest_version": 2,
+   "background": {
+        "scripts": [ "background.js" ]
+    },
+    "content_scripts": [ {
+        "js": [ "recordPeople.js" ],
+        "matches": [ "https://gather.town/*"]
+    } ]
+}
