@@ -10,5 +10,5 @@
     "content_scripts": [ {
         "js": [ "recordPeople.js" ],
         "matches": [ "https://gather.town/*"]
-    } ]
+    }]
 }

@@ -108,37 +108,13 @@ function checkIfIntoTown() {
 // 網頁應用程式: https://script.google.com/a/macros/mail1.ncnu.edu.tw/s/AKfycbwIjYj6cF0vYSDvkqlZzpl0GbdkgR05oydBAW-V6NHR0qooseR6OZsFReHa1azIrO1Wyg/exec
 function send() {
     console.log("insert data into the google sheet");
-    // let _headcount = headcount;
     let nowTime = new Date();
-    // let mydata = new FormData();
-    // mydata.append('time', nowTime);
-    // mydata.append('number', _headcount);
-    // var e = {
-    //     parameter: {
-    //         time: new Date(),
-    //         number: 123
-    //     }
-    // };
-    // var data = {
-    //     time: new Date(),
-    //     number: 123
-    // };
     let url = "https://script.google.com/macros/s/AKfycbxjwoLsfVrbTQJE-orhCLPOH-_zHxFLyMZnM8Z3XXCSp-xyvVwvdiqoVNFdv0IZPNpK/exec";
     url += "?";
     url += `time=${nowTime}&number=${onlineNumber}`;
     console.log(url); // DEBUG 
     //no-cors:告訴瀏覽器，我本來就知道 server 對於這個 request 是沒有設定可以存取 CORS 的，我本來就拿不到 response，我設定mode: 'no-cors，是為了，就算無法存取，也不要跑到 .catch() 那邊，讓它出現 Error。
     fetch(url,{mode:"no-cors"})
-    // fetch(url, {
-    //     body: JSON.stringify(e),
-    //     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    //     headers: {
-    //         'Accept': 'application/json',
-    //         'content-type': 'application/json'
-    //     },
-    //     mode: 'no-cors',
-    //     method: 'POST'
-    // })
         .then(function (resp) {
             console.log("RESP1 :  " + resp);
             console.log("text", resp.text());
