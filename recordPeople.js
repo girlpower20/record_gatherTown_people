@@ -1,4 +1,8 @@
+// 目前上線的玩家
 let clientList = [];
+// google sheet 網頁應用程式網址
+var url = "https://script.google.com/macros/s/AKfycbxjwoLsfVrbTQJE-orhCLPOH-_zHxFLyMZnM8Z3XXCSp-xyvVwvdiqoVNFdv0IZPNpK/exec";
+
 // 目前上線人數
 var onlineNumber;
 // 紀錄上線人清單
@@ -58,7 +62,6 @@ async function listenClientList() {
         });
     });
 
-    // 原本的目標路徑 '/html/body/div/div/div[2]/div[1]/div[2]/div[2]/div[3]'
     // 確定能抓到 使用者清單
     let target = document.evaluate('/html/body/div/div/div[1]/div[1]/div[2]/div[2]/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     while (target == null) {
@@ -104,27 +107,19 @@ function checkIfIntoTown() {
     observer.observe(target, config);
 }
 
-// 部屬作業ID: AKfycbwIjYj6cF0vYSDvkqlZzpl0GbdkgR05oydBAW-V6NHR0qooseR6OZsFReHa1azIrO1Wyg
-// 網頁應用程式: https://script.google.com/a/macros/mail1.ncnu.edu.tw/s/AKfycbwIjYj6cF0vYSDvkqlZzpl0GbdkgR05oydBAW-V6NHR0qooseR6OZsFReHa1azIrO1Wyg/exec
 function send() {
     console.log("insert data into the google sheet");
     let nowTime = new Date();
-    let url = "https://script.google.com/macros/s/AKfycbxjwoLsfVrbTQJE-orhCLPOH-_zHxFLyMZnM8Z3XXCSp-xyvVwvdiqoVNFdv0IZPNpK/exec";
     url += "?";
     url += `time=${nowTime}&number=${onlineNumber}`;
     console.log(url); // DEBUG 
     //no-cors:告訴瀏覽器，我本來就知道 server 對於這個 request 是沒有設定可以存取 CORS 的，我本來就拿不到 response，我設定mode: 'no-cors，是為了，就算無法存取，也不要跑到 .catch() 那邊，讓它出現 Error。
     fetch(url,{mode:"no-cors"})
         .then(function (resp) {
-            console.log("RESP1 :  " + resp);
-            console.log("text", resp.text());
-            // let res = resp.json();
-            // console.log("res.text()",res.text());
             return resp.text();
         })
         .then(
             function (json) {
-                console.log("========json======= ", json);
                 if (json == "success") {
                     console.log("成功 json :  " + json);
                     alert("成功");
