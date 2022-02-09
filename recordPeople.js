@@ -110,8 +110,9 @@ function checkIfIntoTown() {
 function send() {
     console.log("insert data into the google sheet");
     let nowTime = new Date();
-    url += "?";
-    url += `time=${nowTime}&number=${onlineNumber}`;
+    parms  = "?";
+    parms += `time=${nowTime}&number=${onlineNumber}`;
+    url = url.split("?")[0]+parms
     console.log(url); // DEBUG 
     //no-cors:告訴瀏覽器，我本來就知道 server 對於這個 request 是沒有設定可以存取 CORS 的，我本來就拿不到 response，我設定mode: 'no-cors，是為了，就算無法存取，也不要跑到 .catch() 那邊，讓它出現 Error。
     fetch(url,{mode:"no-cors"})
