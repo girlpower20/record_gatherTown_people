@@ -21,8 +21,8 @@ function doGet(e) {
 3. 更改程式碼中的 google sheet id，id 為試算表網址中 "/d" 和 "/edit" 之間
 ![image](https://user-images.githubusercontent.com/82037691/153189661-502d90df-b02a-4d75-b3b2-a42f67b7b42e.png)
 4. 將程式碼部署爲網路應用程式，右上角部屬 > 新增部屬作業 > 存取為所有人(如下圖)<br/>
-![image](https://user-images.githubusercontent.com/82037691/153187043-a2fb5d83-47ad-4f2d-965e-fafd40906a7f.png)
-![image](https://user-images.githubusercontent.com/82037691/153187288-ebbdb6e0-0a2c-49d1-921b-16a423323511.png)
+![image](https://user-images.githubusercontent.com/82037691/153187043-a2fb5d83-47ad-4f2d-965e-fafd40906a7f.png)<br/>
+![image](https://user-images.githubusercontent.com/82037691/153187288-ebbdb6e0-0a2c-49d1-921b-16a423323511.png)<br/>
 5. 複製 網頁應用程式 網址
 ![image](https://user-images.githubusercontent.com/82037691/153190157-1b8ace55-f60c-4e9f-8213-dc57f3adf776.png)
 6. 身分驗證
