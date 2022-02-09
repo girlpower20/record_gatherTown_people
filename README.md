@@ -2,7 +2,7 @@
 因為疫情影響，計畫將成果展改為線上舉行，使用 gather town 展示&紀錄成果，團隊成員提出無法記錄成果展的效果是否如預期，又剛好看到漢偉學長製作"NCNU BBB NoneStop chrome extension"，於是想到監聽網頁紀錄目前線上的人數。
 
 ## 使用方法
-使用方法請參考共筆連結 : https://hackmd.io/vShfIxJDRT2DLxkmQYzmhA
+使用方法請參考共筆連結 : https://hackmd.io/vShfIxJDRT2DLxkmQYzmhA 
 
 ## 參考資料
 - [NCNU_BBB_NonStop](https://github.com/UncleHanWei/NCNU_BBB_NonStop)
