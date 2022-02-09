@@ -1,7 +1,7 @@
 // 目前上線的玩家
 let clientList = [];
 // google sheet 網頁應用程式網址
-var url = "https://script.google.com/macros/s/AKfycbxjwoLsfVrbTQJE-orhCLPOH-_zHxFLyMZnM8Z3XXCSp-xyvVwvdiqoVNFdv0IZPNpK/exec";
+var url = "填入 App Script 網頁應用程式網址";
 
 // 目前上線人數
 var onlineNumber;
